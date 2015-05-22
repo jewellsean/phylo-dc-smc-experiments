@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -l walltime=%WALL_TIME%
+#PBS -l mem=%MEMORY%gb
+#PBS -r n
+#PBS -e /dev/null
+#PBS -o /dev/null
+
+
+export PATH=/global/software/R-3.1.0-rh6/bin/:/home/jewellse/mrbayes/:$PATH
+export SPECIFIED_RESULT_FOLDER=results/all/@{individualExec.getName()}
+
+
+~/java/jre1.8.0_20/bin/java -Xmx%MEMORY%g -cp @{codeRepo}/build/install/@{codeRepoName()}/lib/\* \
+cherry.DivideConquerMain \
+-nParticles 1000 \
+-newickFile ~/phylo-dc-smc/data/%FILE%.newick \
+-fastaFile ~/phylo-dc-smc/data/%FILE%.fasta \
+-rand @@{1}\
