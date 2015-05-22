@@ -1,9 +1,8 @@
 ## Setup wrun group
-
 EXPERIMENT_DIRECTORY=/Users/jewellsean/research/experiments/remote/phylo-dc-smc
-CODE_DIRECTORY=/Users/jewellsean/research/phylo-dc-smc
+CODE_DIRECTORY=/Users/jewellsean/research/phylo-dc-smc/
 
-mkdir $EXPERIMENT_DIRECTORY
+cd $EXPERIMENT_DIRECTORY
 wrun-init -sshRemoteHost grex -codeRepository $CODE_DIRECTORY
 
 ## Setup code repo and build app
@@ -18,7 +17,7 @@ mkdir data
 ## Create data trees
 java -cp $CODE_DIRECTORY/build/install/phylo-dc-smc/lib/\* \
 cherry.SimulateTrees \
--rootDirectory $EXPERIMENT_DIRECTORY/data/
+-rootDirectory $EXPERIMENT_DIRECTORY/data/ \
 -rand 10
 
 ## Generate plans
