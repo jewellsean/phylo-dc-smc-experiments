@@ -14,6 +14,6 @@ export SPECIFIED_RESULT_FOLDER=results/all/@{individualExec.getName()}
 ~/java/jre1.8.0_20/bin/java -Xmx%MEMORY%g -cp @{codeRepo}/build/install/@{codeRepoName()}/lib/\* \
 cherry.DivideConquerMain \
 -nParticles 1000 \
--newickFile ~/phylo-dc-smc/data/%FILE%.newick \
--fastaFile ~/phylo-dc-smc/data/%FILE%.fasta \
+-newickFile ~/phylo-dc-smc-experiments/data/%FILE%.newick \
+-fastaFile ~/phylo-dc-smc-experiments/data/%FILE%.fasta \
 -rand @@{1}\
