@@ -1,6 +1,7 @@
 ## Setup wrun group
-EXPERIMENT_DIRECTORY=/Users/jewellsean/research/experiments/remote/phylo-dc-smc
+EXPERIMENT_DIRECTORY=/Users/jewellsean/research/experiments/remote/phylo-dc-smc-experiments
 CODE_DIRECTORY=/Users/jewellsean/research/phylo-dc-smc/
+
 
 cd $EXPERIMENT_DIRECTORY
 wrun-init -sshRemoteHost grex -codeRepository $CODE_DIRECTORY

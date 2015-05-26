@@ -4,11 +4,14 @@
 
 function gWrun
 {
+	echo "Run:"	wrun-launch -template $1 -why $2
 	wrun-launch -template $1 -why $2
 }
 
-for file in $(ls plans/run/)
+for f in $(ls plans/run/)
 do
-	gWrun plans/run/$file $1
+	if [[ -f "plans/run/${f}" ]]; then
+		gWrun plans/run/$f $1
+	fi
 done
 

@@ -9,21 +9,21 @@ function wallTime()
 
 if [ $1 == 'DC' ]; then
 	if [ $2 == 10 ]; then
-		echo 00:00:10
-	elif [ $2 == 100 ]; then
-		echo 00:00:10
-	elif [ $2 == 1000 ]; then
-		echo 00:01:00
-	else
 		echo 00:10:00
+	elif [ $2 == 100 ]; then
+		echo 00:10:00
+	elif [ $2 == 1000 ]; then
+		echo 01:00:00
+	else
+		echo 01:00:00
 	fi
 else
 	if [ $2 == 10 ]; then
-		echo 00:00:05
-	elif [ $2 == 100 ]; then
-		echo 00:01:00
-	elif [ $2 == 1000 ]; then
 		echo 00:10:00
+	elif [ $2 == 100 ]; then
+		echo 01:00:00
+	elif [ $2 == 1000 ]; then
+		echo 01:00:00
 	else
 		echo 01:00:00
 	fi
@@ -58,8 +58,8 @@ nTaxa=`extractTaxa $simulatedTree`
 DCwallTime=`wallTime 'DC' $nTaxa`
 DCmemory=`memory 'DC' $nTaxa`
 
-DCwallTime=`wallTime 'MB' $nTaxa`
-DCmemory=`memory 'MB' $nTaxa`
+MBwallTime=`wallTime 'MB' $nTaxa`
+MBmemory=`memory 'MB' $nTaxa`
 
 
 ./buildPlans.sh dc-template ../run/${simulatedTree}_dc $DCwallTime $DCmemory $simulatedTree
